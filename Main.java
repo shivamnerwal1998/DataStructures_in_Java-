@@ -143,6 +143,23 @@ class Node{
         node.setNext(temp) ;
 
     }
+   
+     /* method to delete the item in end of list  */
+    public void deleteAtEnd()
+    {
+    }
+     /* method to delete the item in the front of list   */ 
+    public void deleteAtBegin()
+    {
+    }
+     /* method to delete specific element   */
+    public void delete(int data )
+    {
+    }
+     /* method to delete the whole list  */ 
+    public void deleteList()
+    {
+    }
 
 
  }
