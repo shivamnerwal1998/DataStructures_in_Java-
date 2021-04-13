@@ -151,6 +151,15 @@ class Node{
      /* method to delete the item in the front of list   */ 
     public void deleteAtBegin()
     {
+        if( this.isEmpty() )
+        {
+            System.out.println("Already empty ");
+            return ;
+        }
+        Node temp = head ;
+        head = head.getNext() ;
+        temp = null ;
+
     }
      /* method to delete specific element   */
     public void delete(int data )
