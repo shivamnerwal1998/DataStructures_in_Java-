@@ -260,6 +260,21 @@ class Node{
          toDel = null ;
 
      }
+     
+     /* Method to delete entire list  */ 
+     public void deleteList()
+     {
+         Node temp = head ;
+         while( head != null  )
+         {
+             temp = head ;
+             temp = null ;
+             head= head.getNext();
+         }
+
+     }
+
+
 
 
 
