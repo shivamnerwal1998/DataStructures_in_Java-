@@ -201,11 +201,39 @@ class Node{
          fast = fast.getNext();
          slow.setNext(fast);
      }
+     
+     /* Method to delete a node Before a specified node in linked List   */
+     public void deleteBefore(int target)
+     {
+         if( this.head == null || ( (this.head).getNext() == null)  ){
+             System.out.println("Not possible ");
+             return ;
+         }
+         Node temp = search(target) ;
+         if( temp == null || temp == head  ){
+             System.out.println("Not Found ");
+             return ;
+
+         }
+         Node slow = head;
+         Node fast = head;
+         if( head.getNext() == temp ){
+             head.setNext((head.getNext()).getNext()) ;
+             return ;
+
+         }
+         while( fast.getNext() != temp ){
+            slow = fast ;
+            fast = fast.getNext();
+
+         }
+         slow.setNext(fast.getNext() ) ;
+         fast = null ;
+
+     }
 
    
-   
-
-
+  
  }
 
 
