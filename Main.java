@@ -143,32 +143,67 @@ class Node{
         node.setNext(temp) ;
 
     }
-   
-     /* method to delete the item in end of list  */
-    public void deleteAtEnd()
-    {
-    }
-     /* method to delete the item in the front of list   */ 
-    public void deleteAtBegin()
-    {
-        if( this.isEmpty() )
-        {
-            System.out.println("Already empty ");
-            return ;
-        }
-        Node temp = head ;
-        head = head.getNext() ;
-        temp = null ;
+     
+    /* Method to delete a node in left hand side of list  */
+    
+     public void deleteFromFront() {
+         if (this.isEmpty()) {
+             System.out.println("Already empty ");
+             return;
+         }
+         Node temp = head;
+         head = head.getNext();
+         temp = null;
 
-    }
-     /* method to delete specific element   */
-    public void delete(int data )
-    {
-    }
-     /* method to delete the whole list  */ 
-    public void deleteList()
-    {
-    }
+     }
+     
+     /* Method to ddelete a node from Right hand side of list  */ 
+
+     public void deleteFromBack() {
+         if (isEmpty()) {
+             System.out.println("Already empty ");
+             return;
+         }
+         Node temp = this.head;
+         if (temp.getNext() == null) {
+             temp = null;
+             head = head.getNext();
+             return;
+         }
+         while ((temp.getNext()).getNext() != null) {
+             temp = temp.getNext();
+         }
+         Node del = temp.getNext();
+         temp.setNext(null);
+         del = null;
+
+     }
+     
+     /* Method to delete a node at a specified position  */ 
+       public void deleteAt(int target) {
+         Node temp = this.search(target);
+         if ( temp == null) {
+             System.out.println("Not Possible ");
+             return ;
+         }
+         Node fast = this.head ;
+         Node slow = this.head;
+         if( slow == temp  )
+         {
+             this.head = head.getNext() ;
+         }
+         while ( fast != temp   ){
+              slow = fast ;
+              fast = fast.getNext();
+         }
+         Node del = fast ;
+         del = null  ;
+         fast = fast.getNext();
+         slow.setNext(fast);
+     }
+
+   
+   
 
 
  }
