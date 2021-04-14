@@ -286,7 +286,7 @@ class Node{
 
 
 
-public class Main{
+public class Linked_List{
     public static void main(String[] args) {
 
         LinkedList List =  new LinkedList() ;
