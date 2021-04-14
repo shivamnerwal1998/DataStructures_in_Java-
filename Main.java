@@ -231,6 +231,38 @@ class Node{
          fast = null ;
 
      }
+     
+     /*  Method to delete a node after a specific node  */ 
+         public void deleteAfter(int target) {
+         if (head == null || (head.getNext() == null)) {
+             System.out.println("Not Possibe ");
+             return;
+         }
+         Node temp = search(target);
+         if (temp == null) {
+             System.out.println("Not Present ");
+             return;
+         }
+         if( temp.getNext() == null  ){
+             System.out.println("Not Possible");
+             return ; 
+         }
+
+         Node slow = this.head;
+         Node fast = slow;
+         while (fast != temp) {
+            slow = fast  ;
+            fast = fast.getNext();
+         }
+         Node toSet = (fast.getNext()).getNext() ;
+         slow.setNext(toSet);
+         Node toDel = fast.getNext();
+         toDel = null ;
+
+     }
+
+
+
 
    
   
